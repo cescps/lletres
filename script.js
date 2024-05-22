@@ -9,7 +9,11 @@ const words = [
     let scrambledWord = '';
 
     function scramble(word) {
-      return word.split('').sort(() => Math.random() - 0.5).join('');
+      let scrambled = word.split('');
+      while (scrambled.join('') === word) {
+        scrambled.sort(() => Math.random() - 0.5);
+      }
+      return scrambled.join('');
     }
 
     function displayScrambledWord(word) {
@@ -17,7 +21,7 @@ const words = [
       container.innerHTML = '';
       word.split('').forEach(letter => {
         const span = document.createElement('span');
-        span.textContent = letter;
+        span.textContent = letter.toUpperCase();
         span.className = 'px-4 py-2 border border-gray-700 rounded bg-gray-800 text-white';
         container.appendChild(span);
       });
@@ -32,8 +36,8 @@ const words = [
     }
 
     function checkWord() {
-      const userInput = document.getElementById('user-input').value;
-      if (userInput.toLowerCase() === currentWord.toLowerCase()) {
+      const userInput = document.getElementById('user-input').value.toLowerCase();
+      if (userInput === currentWord.toLowerCase()) {
         document.getElementById('feedback').innerText = 'Ho has encertat!';
       } else {
         document.getElementById('feedback').innerText = 'Torna-ho a provar.';
