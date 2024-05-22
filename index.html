@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - xifres i lletres</title>
+  <!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Endevina la Paraula</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body class="flex items-center justify-center min-h-screen">
+  <div class="text-center">
+    <div id="scrambled-word" class="flex justify-center mb-4 space-x-2"></div>
+    <input id="user-input" type="text" placeholder="Escriu la paraula" class="px-4 py-2 border border-gray-700 rounded mb-4 text-black" onkeypress="handleKeyPress(event)">
+    <div>
+      <button onclick="nextWord()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Següent Paraula</button>
+    </div>
+    <p id="feedback" class="mt-4"></p>
+  </div>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
